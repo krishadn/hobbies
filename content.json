@@ -1,0 +1,78 @@
+{
+    "categories": ["writings","books","music","photos","travel","films","food"],
+    "entries": [
+        {
+            "title": "CBD",
+            "category": "writings",
+            "mainText": "With a grip stifling and tight\nyou take me to a new height;\nWith a whisper stern and sweet\nand a beauty too concrete\nyou entice my soul\nto give it gaping black hole;\n\nWhat a hold you have on me\nI'd stay though my soul screams 'flee'\nConsume my all, my all for thee",
+            "imageFile": "./images/cbd.jpg",
+            "imageAlt": "A photo of skyscrappers",
+            "imageDesc": "Photo by <a href='https://unsplash.com/@mijulshewrote?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>IKECHUKWU JULIUS UGWU</a> on <a href='https://unsplash.com/photos/a-few-tall-buildings-4NOUIZg3lpY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>",
+            "audioFile": ""
+        },
+        {
+            "title": "Delusions",
+            "category": "writings",
+            "mainText": "Behind the screen \nI feel them glean\nSilently stripping me \nOf my precious dignity \nI swear my ears heard \nShutters as fast as this bird \nNo, I know it's absurd \nBut I swear my ears heard \nOf my precious dignity \nSilently stripped off me \nAs they insidiously glean \nFrom behind the screen \n",
+            "imageFile": "./images/delusions.jpg",
+            "imageAlt": "An eye reflecting a photographer holding a camera",
+            "imageDesc": "Photo by <a href='https://unsplash.com/@guenifi_ouassim?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Guenifi Ouassim</a> on <a href='https://unsplash.com/photos/a-close-up-of-a-persons-eye-3Lb-qNQG2TY?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>",
+            "audioFile": ""
+        },
+        {
+            "title": "Projector",
+            "category": "writings",
+            "mainText": "Through what lens do we see\nThe world that seems gloomy\nOr is it angry?\nDepends on what hounds me\nWhat is, is my mind\nI can see what I want to find\nDoes it make me blind?\nNo, that really is mankind.",
+            "imageFile": "./images/projector.jpg",
+            "imageAlt": "Skyline through an old textured window",
+            "imageDesc": "Photo by <a href='https://unsplash.com/@jonasdenil?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Jonas Denil</a> on <a href='https://unsplash.com/photos/black-and-red-floral-textile-MQOhQhF8WN0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>",
+            "audioFile": ""
+        },
+        {
+            "title": "The Killing of Thoughts",
+            "category": "writings",
+            "mainText": "In not too long a distance, I see\nA swift descent designed so steeply\nEveryone around's up and about\nIndifferent of their frothing mouth;\nLife, feigned ignorance, hypnotic daze\nWe're all dancing in the same dark place\nAs the killer crawls under the skin\nSpreading disease in the mind, unseen\nDivided, conquered, masterfully\nAt once, death falls upon the witty",
+            "imageFile": "./images/killing.jpg",
+            "imageAlt": "Cracked sculpture of a woman",
+            "imageDesc": "Photo by <a href='https://unsplash.com/@smiley_shotz?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Marianna Smiley</a> on <a href='https://unsplash.com/photos/gray-concrete-statue-of-man-holding-stick-jHOg6v6RIIs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash'>Unsplash</a>",
+            "audioFile": ""
+        },
+        {
+            "title": "Original Song: Ulit",
+            "category": "music",
+            "mainText": "Insert lyrics here",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageDesc": "",
+            "audioFile": "./audio/ulit.mp3"
+        },
+        {
+            "title": "Going Home",
+            "category": "photos",
+            "mainText": "I love this place.\nI was here last time.\nTomorrow again.\nThe day after that, we'll see.\nBut it's life on repeat",
+            "imageFile": "./images/tracks.jpg",
+            "imageAlt": "A photo of buildings from train station platform",
+            "imageDesc": "View from a train platform",
+            "audioFile": ""
+        },
+        {
+            "title": "Beauty of Life",
+            "category": "photos",
+            "mainText": "Tell me what flower this is,\nif only to save me from asking a lifeless box",
+            "imageFile": "./images/flower.jpg",
+            "imageAlt": "Two beautiful fuschia flowers",
+            "imageDesc": "Some flowers in a protected area",
+            "audioFile": ""
+        },
+        {
+            "title": "Dancing Water",
+            "category": "photos",
+            "mainText": "Like a kid, I marvel at fountains.\nGive me back the bliss of not knowing.\nIt's all magic",
+            "imageFile": "./images/fountain.jpg",
+            "imageAlt": "An image of a fountain with colorful lights",
+            "imageDesc": "Raja Sulayman Park at Night",
+            "audioFile": ""
+        }
+        
+    ]
+}
