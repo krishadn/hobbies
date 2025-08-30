@@ -1,0 +1,272 @@
+<!DOCTYPE html> <!-- to specify the version of html used; today however this only means that html used is fully compliant with the standards -->
+
+<html lang="en"> <!-- language is used by search engines for indexing and for accessibility -->
+
+<head>
+    <meta charset="UTF-8"> <!-- is not required (HTTP header may include Content-Type where the encoding is specified) but is recommended for faster page load time; -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- For responsive design; width sets minimum width and vw unit, initial-scale is the zoom level -->
+    <meta name="description" content="check out what I do when I'm bored"> <!-- For SEO -->
+    <meta name="keywords" content=""> <!-- Now ignored by searh engines due to spamming -->
+    <meta name="author" content="KPES"> <!-- For contacting author if necessary-->
+
+    <title>K's Collection</title>
+
+    <!-- LINKS -->
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="icon" href="./favicon.png">
+    
+    <!-- TODO OTHER META DATA -->
+        <!-- base tag -->
+        <!-- open graph -->
+        <!-- twitter -->
+
+</head>
+
+<body>
+    
+    <header class="header">
+        <!-- LOGO -->
+        <img src="./images/logo.png" alt="" width="500" height="500" class="header__logo"> <!--- null alt text since image is merely decorative -->
+
+        <!-- NAVIGATION -->
+        <nav class="header__nav">
+            <input type="checkbox" id="menu" class="header__nav__toggle">
+            <label for="menu" class="header__nav__title">menu</label>
+            <label for="menu" class="header__nav__mask"></label>
+            <!-- REUSABLE LIST -->
+            <ul class="header__nav__ul">
+                <li class="header__nav__ul_li"><a href="/">home</a></li>
+                <li class="header__nav__ul_li"><a href="writings.html">writings</a></li>
+                <li class="header__nav__ul_li"><a href="music.html">music</a></li>
+                <li class="header__nav__ul_li"><a href="photos.html">photos</a></li>
+                <li class="header__nav__ul_li"><a href="travel.html">travel</a></li>                
+                <li class="header__nav__ul_li"><a href="contact.html">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <!-- WRITING ARTICLE -->
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">CBD</h2>
+            </div>
+            <div>
+                <p class="main__article__text">
+                    With a grip stifling and tight <br>
+                    you take me to a new height; <br>
+                    With a whisper stern and sweet <br>
+                    and a beauty too concrete <br>
+                    you entice my soul <br>
+                    to give it gaping black hole; <br>
+                    <br>
+                    What a hold you have on me <br>
+                    I'd stay though my soul screams 'flee' <br>
+                    Consume my all, my all for thee
+                </p>
+            </div>
+        </article>
+
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">Delusions</h2>
+            </div>
+            <div>
+                <p class="main__article__text">
+                    Behind the screen <br>
+                    I feel them glean <br>
+                    Silently stripping me <br>
+                    Of my precious dignity <br>
+                    I swear my ears heard <br>
+                    Shutters as fast as this bird <br>
+                    No, I know it's absurd <br>
+                    But I swear my ears heard <br>
+                    Of my precious dignity <br>
+                    Silently stripped off me <br>
+                    As they insidiously glean <br>
+                    From behind the screen <br>
+                </p>
+            </div>
+        </article>
+
+
+        <!-- MUSIC ARTICLE -->
+
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">Original Song: Ulit</h2>
+            </div>
+            <div class="main__article__audio">
+                <audio controls>  <!-- Interactive semantic -->
+                    <source src="./audio/ulit.m4a" type="audio/x-m4a"> <!-- Cannot put label on the interactive elements since this is a native media player -->
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </article>
+
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">Original Song: Ulit</h2>
+            </div>
+            <div class="main__article__audio">
+                <audio controls>
+                    <source src="./audio/ulit.mp3" type="audio/mp3">
+                    Your browser does not support the audio tag.
+                </audio>
+            </div>
+        </article>
+
+
+        <!-- PHOTO ARTICLE -->
+
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">Dancing Water</h2>
+            </div>
+            <figure class="main__article__fig">
+                <img src="./images/dancing-water.jpg" alt="An image of a fountain with colorful lights" width="641" height="854">
+                <figcaption>Raja Sulayman Park at Night</figcaption>
+            </figure>
+        </article>
+
+        <article class="main__article">
+            <div>
+                <h2 class="main__article__title">Going Home</h2>
+            </div>
+            <figure class="main__article__fig">
+                <img src="./images/sample.jpg" alt="A photo of buildings from train station platform" width="1920" height="1200">
+                <figcaption>Train Platform at LRT 2</figcaption>
+            </figure>
+        </article>
+
+        <div class="main__page-nav">
+            <p><a href="#">next<br>page</a></p>
+            <p><a href="#">previous<br>page</a></p>
+            <p><a href="#">first page</a></p>
+            <p><a href="#">last page</a></p>
+        </div>
+
+    </main>
+
+    <aside class="aside">
+        <div>
+            <h2 class="aside__header"> <span class="highlight">Kay's</span> Best</h2>
+        </div>
+
+        <div class="aside__carousel">
+            <article class="aside__article">
+                <div>
+                    <h3 class="aside__article__title">CBD</h3>
+                </div>
+                <div>
+                    <p class="aside__article__text">
+                        With a grip stifling and tight <br>
+                        you take me to a new height; <br>
+                        With a whisper stern and sweet <br>
+                        and a beauty too concrete <br>
+                        you entice my soul <br>
+                        to give it gaping black hole; <br>
+                        <br>
+                        What a hold you have on me <br>
+                        I'd stay though my soul screams 'flee' <br>
+                        Consume my all, my all for thee
+                    </p>
+                </div>
+            </article>
+
+            <article class="aside__article">
+                <div>
+                    <h3 class="aside__article__title">Delusions</h3>
+                </div>
+                <div>
+                    <p class="aside__article__text">
+                        Behind the screen <br>
+                        I feel them glean <br>
+                        Silently stripping me <br>
+                        Of my precious dignity <br>
+                        I swear my ears heard <br>
+                        Shutters as fast as this bird <br>
+                        No, I know it's absurd <br>
+                        But I swear my ears heard <br>
+                        Of my precious dignity <br>
+                        Silently stripped off me <br>
+                        As they insidiously glean <br>
+                        From behind the screen <br>
+                    </p>
+                </div>
+
+            </article>
+
+            <article class="aside__article">
+                <div>
+                    <h3 class="aside__article__title">Original Song: Ulit</h3>
+                </div>
+                <div class="aside__article__audio">
+                    <audio controls>
+                        <source src="./audio/ulit.m4a" type="audio/x-m4a">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+            </article>
+    
+            <article class="aside__article">
+                <div>
+                    <h3 class="aside__article__title">Original Song: Ulit</h3>
+                </div>
+                <div class="aside__article__audio">
+                    <audio controls>
+                        <source src="./audio/ulit.mp3" type="audio/mp3">
+                        Your browser does not support the audio tag.
+                    </audio>
+                </div>
+            </article>
+
+            <article class="aside__article">
+                <div>
+                    <h3 class="aside__article__title">Dancing Water</h3>
+                </div>
+                <figure class="aside__article__fig">
+                    <img class="aside__article__fig__img" src="./images/dancing-water.jpg" alt="An image of a fountain with colorful lights" width="641" height="854">
+                    <figcaption>Raja Sulayman Park at Night</figcaption>
+                </figure>
+            </article>
+
+            <article class="aside__article">
+                <div>
+                    <h2 class="aside__article__title">Going Home</h2>
+                </div>
+                <figure class="aside__article__fig">
+                    <img class="aside__article__fig__img" src="./images/sample.jpg" alt="A photo of buildings from train station platform" width="1920" height="1200">
+                    <figcaption>Train Platform at LRT 2</figcaption>
+                </figure>
+            </article>
+        </div>
+    </aside>
+
+
+    <footer class="footer">
+        <nav class="footer__nav">
+            <input type="checkbox" id="menu-footer" class="footer__nav__toggle">
+            <!-- REUSABLE LIST -->
+            <ul class="footer__nav__ul">
+                <li class="footer__nav__ul_li"><a href="/">home</a></li>
+                <li class="footer__nav__ul_li"><a href="writings.html">writings</a></li>
+                <li class="footer__nav__ul_li"><a href="music.html">music</a></li>
+                <li class="footer__nav__ul_li"><a href="photos.html">photos</a></li>
+                <li class="footer__nav__ul_li"><a href="travel.html">travel</a></li>                 
+                <li class="footer__nav__ul_li"><a href="contact.html">contact</a></li>
+            </ul>
+            <label for="menu-footer" class="footer__nav__title">menu</label>
+            <label for="menu-footer" class="footer__nav__mask"></label>
+        </nav>
+
+        <div>
+            <p class="footer__copy">copyright 2025</p>
+            <p class="footer__copy--mobile">&copy; 2025</p>
+        </div>
+
+    </footer>
+    
+</body>
+</html>

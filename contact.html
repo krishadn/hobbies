@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="KPES">
+        <meta name="description" content="author contact form">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Contact - K's Collection</title>
+
+        <!-- LINKS -->
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="icon" href="favicon.png">
+
+        <!-- TODO OTHER META DATA -->
+        <!-- base tag -->
+        <!-- open graph -->
+        <!-- twitter -->
+
+    </head>
+
+    <body class="body--contact">
+        <header class="header header--contact">
+            <h1 class="header--contact__title">get <br>in<br><span class="highlight">touch</span></h1>
+            <p class="header--contact__copy">copyright 2025</p>
+
+            <!-- NAVIGATION -->
+            <nav class="header__nav header--contact__nav">
+                <input type="checkbox" id="menu" class="header__nav__toggle">
+                <label for="menu" class="header__nav__title">menu</label>
+                <label for="menu" class="header__nav__mask"></label>
+                <!-- REUSABLE LIST -->
+                <ul class="header__nav__ul">
+                    <li class="header__nav__ul_li"><a href="/">home</a></li>
+                    <li class="header__nav__ul_li"><a href="writings.html">writings</a></li>
+                    <li class="header__nav__ul_li"><a href="music.html">music</a></li>
+                    <li class="header__nav__ul_li"><a href="photos.html">photos</a></li>
+                    <li class="header__nav__ul_li"><a href="travel.html">travel</a></li>                
+                    <li class="header__nav__ul_li"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+
+        </header>
+
+        <main class="main--contact">
+            <form action="https://httpbingo.org/post" method="post" class="main--contact__form">
+                <p class="main--contact__form__item">
+                    <label for="name" class="main--contact__form__lbl">name</label>
+                    <input type="text" name="name" id="name" class="main--contact__form__ctl">
+                </p>
+                <p class="main--contact__form__item">
+                    <label for="email" class="main--contact__form__lbl">email (required)</label>
+                    <input type="email" name="email" id="email" required class="main--contact__form__ctl">
+                <p class="main--contact__form__item">
+                    <label for="message" class="main--contact__form__lbl">message (required)</label>
+                    <textarea name="message" id="message" rows="10" required class="main--contact__form__ctl"></textarea>
+                <p>
+                    <button class="main--contact__form__btn">send</button>           
+                </p>
+
+            </form>
+        </main>
+
+        <footer class="footer--contact">
+            <nav class="footer__nav">
+                <!-- REUSABLE LIST -->
+                <ul class="footer__nav__ul">
+                    <li class="footer__nav__ul_li"><a href="/">home</a></li>
+                    <li class="footer__nav__ul_li"><a href="writings.html">writings</a></li>
+                    <li class="footer__nav__ul_li"><a href="music.html">music</a></li>
+                    <li class="footer__nav__ul_li"><a href="photos.html">photos</a></li>
+                    <li class="footer__nav__ul_li"><a href="travel.html">travel</a></li>                 
+                    <li class="footer__nav__ul_li"><a href="contact.html">contact</a></li>
+                </ul>
+            </nav>
+
+            <div>
+                <p class="footer__copy--mobile">&copy; 2025</p>
+            </div>
+        </footer>   
+
+    </body>
+
+
+
+</html>
