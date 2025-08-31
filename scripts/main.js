@@ -1,9 +1,6 @@
-async function getContent(filename) {
-    const contents = await fetch(filename);
-    const contentsJson = await contents.json();
-    return contentsJson.entries;
-}
+// functions
 
+// ------------- to create article components -------------
 function createArticleTitle(title) {
     const titleDiv = document.createElement("div");
     const titleText = document.createElement("h2");
@@ -20,9 +17,7 @@ function createWritingContent(entry) {
     const contentPar = document.createElement("p");
     
     contentPar.classList.add("main__article__text");
-    contentPar.textContent = entry.mainText;
-    contentPar.style.whiteSpace = "pre";
-    
+    contentPar.textContent = entry.mainText;    
     contentDiv.appendChild(contentPar);
 
     return contentDiv;
@@ -37,12 +32,15 @@ function createMusicContent(entry) {
 
     const contentSource = document.createElement("source");
     contentSource.setAttribute("src", entry.audioFile);
-    contentSource.setAttribute("type", "audio/mp3");
+    contentSource.setAttribute("type", entry.audioType);
 
-    contentAudio.appendChild(contentSource);
-    contentAudio.textContent = "Your browser does not support the audio tag";
+    contentAudio.append(contentSource, "Your browser does not support the audio tag");
 
-    contentDiv.appendChild(contentAudio);
+    const contentText = document.createElement("p");
+    contentText.textContent = entry.mainText;
+
+    contentDiv.append(contentAudio, contentText);
+
     return contentDiv;
 }
 
@@ -54,12 +52,13 @@ function createPhotoContent(entry) {
 
     contentImg.setAttribute("src", entry.imageFile);
     contentImg.setAttribute("alt",entry.imageAlt);
+    contentImg.setAttribute("width",entry.imageWidth);
+    contentImg.setAttribute("height",entry.imageHeight);
 
     const contentCap = document.createElement("figcaption");
-    contentCap.textContent = entry.imageDesc;
+    contentCap.textContent = entry.mainText;
 
-    contentFig.appendChild(contentImg);
-    contentFig.appendChild(contentCap);
+    contentFig.append(contentImg, contentCap);
 
     return contentFig;
 }
@@ -89,7 +88,13 @@ function createArticle(entry) {
     main.appendChild(article);
 }
 
+// ------------- to fetch content -------------
+async function getContent(filename) {
+    const contents = await fetch(filename);
+    const contentsJson = await contents.json();
+    contentsJson.entries.forEach(createArticle);
+}
+
+// main script
 const filename = "content.json";
-getContent(filename).then(res => {
-    res.forEach(createArticle);
-});
+getContent(filename)
