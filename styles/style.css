@@ -301,7 +301,6 @@ body {
 
 .main__page-nav {
     min-width: 100%;
-    min-height: 100vh;
     display: grid;
     grid-template-areas: 
         'next next'
@@ -310,7 +309,7 @@ body {
     align-items: center;
 }
 
-.main__page-nav p:nth-child(1) {
+.main__page-nav p.next {
     grid-area: next;
     width: 60%;
     justify-self: center;
@@ -321,26 +320,24 @@ body {
     animation-range-start: 0;
     animation-range-end: 20vh;
 
+    color: var(--LIGHT-PRIMARY-COLOR);
+    font: 4rem var(--BODY-FONT);
+    line-height: 3rem;
 
-    > a:any-link {
-        text-decoration: none;
-        color: var(--LIGHT-PRIMARY-COLOR);
-        font: 4rem var(--BODY-FONT);
-        line-height: 3rem;
-    }
-
-    > a:is(:hover, :focus) {
+    span:is(:hover, :focus) {
         display: inline-block;
-        transform: translate(-1.5rem) scale(120%);
-        transition: transform 1s ease-out
+        transform: translate(-1.5rem) scale(105%);
+        transition: transform 1s ease-out;
+        cursor: pointer;
     }
 
-    > a:is(:hover, :focus)::after {
-        content: " >";
-    }
+    span:is(:hover, :focus)::after {
+    content: " >";
 }
 
-.main__page-nav p:nth-child(2) {
+}
+
+.main__page-nav p.previous {
     grid-area: prev;
     width: 60%;
     justify-self: center;
@@ -351,25 +348,25 @@ body {
     animation-range-start: 0;
     animation-range-end: 20vh;
 
-    > a:any-link {
-        text-decoration: none;
-        color: var(--LIGHT-PRIMARY-COLOR);
-        font: 4rem var(--BODY-FONT);
-        line-height: 3rem;
-    }
+    color: var(--LIGHT-PRIMARY-COLOR);
+    font: 4rem var(--BODY-FONT);
+    line-height: 3rem;
 
-    > a:is(:hover, :focus) {
+    span:is(:hover, :focus) {
         display: inline-block;
-        transform: translate(-1.5rem) scale(120%);
-        transition: transform 1s ease-out
+        transform: translate(-1.5rem) scale(105%);
+        transition: transform 1s ease-out;
+        cursor: pointer;
     }
-
-    > a:is(:hover, :focus)::before {
+    
+    span:is(:hover, :focus)::before {
         content: "< ";
     }
 }
 
-.main__page-nav p:nth-child(3) {
+
+
+.main__page-nav p.first {
     grid-area: first;
     text-align: start;
     
@@ -378,24 +375,24 @@ body {
     animation-range-start: 0;
     animation-range-end: 10vh;
 
-    > a:any-link {
-        text-decoration: none;
-        color: var(--LIGHT-SECONDARY-COLOR);
-        font: 2em var(--BODY-FONT);
-    }
-
-    > a:is(:hover, :focus) {
+    color: var(--LIGHT-SECONDARY-COLOR);
+    font: 2em var(--BODY-FONT); 
+    
+    span:is(:hover, :focus) {
         display: inline-block;
         transform: translate(-1.5rem) scale(120%);
-        transition: transform 1s ease-out
+        transition: transform 1s ease-out;
+        cursor: pointer;   
     }
 
-    > a:is(:hover, :focus)::before {
-        content: "<< ";
+    span:is(:hover, :focus)::before {
+        content: "<< "; 
     }
+    
 }
 
-.main__page-nav p:nth-child(4) {
+
+.main__page-nav p.last {
     grid-area: last;
     text-align: end;
 
@@ -404,23 +401,22 @@ body {
     animation-range-start: 0;
     animation-range-end: 10vh;
 
-    > a:any-link {
-        text-decoration: none;
-        color: var(--LIGHT-SECONDARY-COLOR);
-        font: 2em var(--BODY-FONT);
-    }
+    color: var(--LIGHT-SECONDARY-COLOR);
+    font: 2em var(--BODY-FONT);
 
-    > a:is(:hover, :focus) {
+    span:is(:hover, :focus) {
         display: inline-block;
-        transform: translate(-1.5rem) scale(120%);
-        transition: transform 1s ease-out
+        transform: translate(1.5rem) scale(120%);
+        transition: transform 1s ease-out;
+        cursor: pointer;
     }
 
-    > a:is(:hover, :focus)::after {
+    span:is(:hover, :focus)::after {
         content: " >>";
     }
 
 }
+
 
 .main--contact {
     grid-area: mn;
