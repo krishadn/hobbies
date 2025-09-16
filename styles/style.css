@@ -300,6 +300,7 @@ body {
 }
 
 .main__page-nav {
+    padding: 10rem 0;
     min-width: 100%;
     display: grid;
     grid-template-areas: 

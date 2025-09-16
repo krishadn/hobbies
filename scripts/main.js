@@ -64,7 +64,12 @@ function handlePageNav(e) {
             loadContent();
         } else if (e.target.textContent.includes("last")) {
             const fullPages = Math.floor(entries.length / entryPerPage)
-            offset = fullPages * entryPerPage;
+
+            if (entries.length % entryPerPage) {
+                offset = fullPages * entryPerPage;   
+            } else {
+                offset = (fullPages * entryPerPage) - entryPerPage;
+            }
             loadContent();
         } 
     }
