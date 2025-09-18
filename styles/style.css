@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Xanh+Mono:ital@0;1&display=swap'); /* tells the CSS engine to include an external stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 
@@ -59,6 +60,8 @@ textarea {
 
     --BODY-FONT: "Noto Serif", serif;
     --HEADINGS-FONT: "Xanh Mono", monospace;
+    --SPECIAL-FONT-A: "Inter", sans-serif;
+    --SPECIAL-FONT-B: "Courier Prime", monospace;
     --FONT-WEIGHT: 300;
     --BODY-FONT-SIZE: 1.2rem;
     --ASIDE-BODY-FONT-SIZE: 1rem;
@@ -274,10 +277,6 @@ body {
 
     gap: 1rem;
 
-    > audio {
-        width: 100%;
-    }
-
     > p {
         color: var(--LIGHT-TEXT-COLOR);
         font: var(--NORMAL-FONT);
@@ -285,6 +284,84 @@ body {
         line-height: 2.5rem;
     }
 }
+
+.main__article__audio__player {
+    width: 100%;
+    padding: 0 10% 0 5%;
+    background-color: var(--LIGHT-PRIMARY-COLOR);
+    border-radius: 50px;
+    min-height: 8.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+
+
+    > .control {
+        flex: 1;
+        border-radius: 50px;
+        max-width: 80px;
+        aspect-ratio: 1 / 1;
+        font: var(--FONT-WEIGHT) 2rem var(--BODY-FONT);
+        color: var(--LIGHT-PRIMARY-COLOR);
+        background-color: var(--LIGHT-BGCOLOR);   
+
+    }
+
+    > .screen {
+        flex: 4;
+        min-height: 8.5rem;
+        border-radius: 50px;
+        background-color: var(--LIGHT-SECONDARY-COLOR);
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+        padding: 0.5rem 0;
+
+               
+
+        > p {
+            flex: 1;
+            font: 700 1.15rem var(--SPECIAL-FONT-A);
+            color: var(--LIGHT-FORM-COLOR);
+
+        }
+
+        > .screen__details {
+            border: 0.2px solid var(--LIGHT-BGCOLOR);
+            width: 80%;
+            flex: 4;
+            background-color: #D9D9D9;
+            font: var(--FONT-WEIGHT) 1.15rem var(--SPECIAL-FONT-B);
+            color: var(--LIGHT-TEXT-COLOR);
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            
+            > .progress-container {
+                margin-left: 5%;
+                width: 90%;
+                height: 10px;
+                border: 0.2px solid black;
+
+                > .progress-bar {
+                    width: 0%;
+                    height: 100%;
+                    background-color: var(--LIGHT-ACCENT-COLOR);
+
+                }
+
+            }
+            
+        }
+
+
+    }
+}
+
 
 .main__article__fig {
     padding: 2rem;

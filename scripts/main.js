@@ -120,22 +120,72 @@ function createWritingContent(entry) {
 }
 
 function createMusicContent(entry) {
+    const audioId = entry.audioFile.split("/")[2].split(".")[0];
     const contentDiv = document.createElement("div");
     contentDiv.classList.add("main__article__audio");
 
+    const playerDiv = document.createElement("div");
+    playerDiv.classList.add("main__article__audio__player");
+
+    const playBtn = document.createElement("button");
+    playBtn.setAttribute("data-title", `${audioId}`);
+    playBtn.classList.add("control");
+    playBtn.textContent = "▶";
+    playBtn.onclick = playAudio;
+
     const contentAudio = document.createElement("audio");
-    contentAudio.setAttribute("controls","");
+    contentAudio.setAttribute("src", entry.audioFile);
+    contentAudio.setAttribute("type", entry.audioType);
+    contentAudio.setAttribute("data-title", `${audioId}`);
+    contentAudio.ontimeupdate = throttle(updateTimeIndicator, 750);
+    contentAudio.onpause = updatePlayBtn;
+    contentAudio.onplay = updatePlayBtn;
 
-    const contentSource = document.createElement("source");
-    contentSource.setAttribute("src", entry.audioFile);
-    contentSource.setAttribute("type", entry.audioType);
 
-    contentAudio.append(contentSource, "Your browser does not support the audio tag");
+
+    const screenDiv = document.createElement("div");
+    screenDiv.classList.add("screen");
+
+    const topText = document.createElement("p");
+    topText.textContent = "DIGITAL MP3 PLAYER";
+
+
+    const detailsDiv = document.createElement("div");
+    detailsDiv.classList.add("screen__details");
+
+    const timeStamp = document.createElement("p");
+    timeStamp.setAttribute("data-title", `${audioId}`);
+    timeStamp.textContent = "00:00";
+
+    const title = document.createElement("p");
+    title.textContent = entry.title;
+
+    const progressDiv = document.createElement("div");
+    progressDiv.setAttribute("data-title", `${audioId}`);
+    progressDiv.classList.add("progress-container");
+    progressDiv.onclick = moveProgressBar;
+
+    const progressBar = document.createElement("div");
+    progressBar.setAttribute("data-title", `${audioId}`);
+    progressBar.classList.add("progress-bar");
+
+    progressDiv.append(progressBar);
+
+
+    detailsDiv.append(timeStamp, title, progressDiv);
+
+    const bottomText = document.createElement("p");
+    bottomText.textContent = "MP3/WMA/REC";
+
+    screenDiv.append(topText,detailsDiv,bottomText);
+
+    playerDiv.append(playBtn, contentAudio, screenDiv);
+
 
     const contentText = document.createElement("p");
     contentText.textContent = entry.mainText;
 
-    contentDiv.append(contentAudio, contentText);
+    contentDiv.append(playerDiv, contentText);
 
     return contentDiv;
 }
@@ -184,7 +234,7 @@ function createArticle(entry) {
 }
 
 
-/* ------------- Page navigatoffset = ion component ------------- */
+/* ------------- Page navigation component ------------- */
 
 // for Next and Previous
 function createByPageNav(text) {
@@ -226,7 +276,75 @@ function createPageNav() {
 
 
 
+/* functions for interactivity */
+
+function playAudio(event) {
+    const audioId = event.target.dataset.title;
+    const audio = document.querySelector(`audio[data-title=${audioId}]`);
+
+    if (audio.paused) {
+        audio.play();
+    } else {
+        audio.pause();
+    }
+
+}
+
+function moveProgressBar(event) {
+    const audioId = event.target.dataset.title;
+    const audio = document.querySelector(`audio[data-title=${audioId}]`);
+    audio.currentTime = audio.duration * (event.offsetX/event.currentTarget.offsetWidth);
+}
+
+function updatePlayBtn(event) {
+    const audio = event.target;
+    const audioId = audio.getAttribute("src").split("/")[2].split(".")[0];
+    const playBtn = document.querySelector(`button[data-title=${audioId}]`);
+    
+    playBtn.textContent = (audio.paused) ? "▶" : "⏸︎";
+
+}
+
+
+function updateTimeIndicator(event) {
+    const audio = event.target;
+    const audioId = audio.getAttribute("src").split("/")[2].split(".")[0];
+
+    // timestamp
+    const timeStamp = document.querySelector(`p[data-title=${audioId}]`);
+    const currentTime = Math.floor(audio.currentTime);
+    const seconds = Math.floor(currentTime % 60).toString().padStart(2, "0");
+    const minutes = Math.floor(currentTime / 60).toString().padStart(2, "0");
+    timeStamp.textContent = `${minutes}:${seconds}`;
+
+    // progressbar
+    const progressBar = document.querySelector(`div.progress-bar[data-title=${audioId}]`);
+    const width = Math.floor((audio.currentTime / audio.duration) * 100);
+    progressBar.style.width = `${width}%`;
+
+
+}
 
 
 
+function throttle(func, delay=1000) {
 
+    let shouldWait = false;
+
+    return (...args) => {
+
+        if (shouldWait) return;
+        
+        func(...args);
+
+        shouldWait = true;
+
+        setTimeout (() => {
+            shouldWait = false;
+        }, delay)
+
+    }
+
+
+
+}
