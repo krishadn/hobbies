@@ -300,6 +300,7 @@ body {
     > .control {
         flex: 1;
         border-radius: 50px;
+        border: none;
         max-width: 80px;
         aspect-ratio: 1 / 1;
         font: var(--FONT-WEIGHT) 2rem var(--BODY-FONT);
@@ -594,6 +595,7 @@ body {
     padding: 1.5rem;
     color: var(--LIGHT-TEXT-COLOR);
     font: var(--FONT-WEIGHT) var(--ASIDE-BODY-FONT-SIZE) var(--BODY-FONT);
+    white-space: pre;
 }
 
 /* TODO checkout other way for serving audio and styling */

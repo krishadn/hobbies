@@ -2,19 +2,22 @@
     to fetch content from json file
 */
 const filename = "content.json";
-const entries = []
+const entries = [];
+const bestEntries = [];
 let offset = 0;
 const entryPerPage = 5;
 
 fetch(filename)
     .then((contents) => contents.json())
     .then((contentsJson) => entries.push(...contentsJson.entries))
-    .then(loadContent);
+    .then(() => bestEntries.push(...entries.filter((entry) => entry.best)))
+    .then(loadMainContent)
+    .then(loadAsideContent);
     
 
 /* functions for loading content */
 
-function loadContent() {
+function loadMainContent() {
     const main = document.querySelector(".main");
     clearMain();
 
@@ -55,13 +58,13 @@ function handlePageNav(e) {
     if (e.target.tagName === "SPAN"){
         if (e.target.textContent.includes("next")) {
             offset += entryPerPage;
-            loadContent();
+            loadMainContent();
         } else if (e.target.textContent.includes("previous")) {
             offset -= entryPerPage;
-            loadContent();
+            loadMainContent();
         } else if (e.target.textContent.includes("first")) {
             offset = 0;
-            loadContent();
+            loadMainContent();
         } else if (e.target.textContent.includes("last")) {
             const fullPages = Math.floor(entries.length / entryPerPage)
 
@@ -70,9 +73,23 @@ function handlePageNav(e) {
             } else {
                 offset = (fullPages * entryPerPage) - entryPerPage;
             }
-            loadContent();
+            loadMainContent();
         } 
     }
+
+}
+
+
+function loadAsideContent() {
+    const asideCarousel = document.querySelector(".aside__carousel");
+
+    bestEntries.forEach(entry => {
+        console.log("Inside aside");
+        const article = createArticle(entry,aside=true);
+        asideCarousel.appendChild(article);
+    })
+
+
 
 }
 
@@ -97,22 +114,22 @@ function clearMain() {
 
 /* ------------- Article component ------------- */
 
-function createArticleTitle(title) {
+function createArticleTitle(title, aside=false) {
     const titleDiv = document.createElement("div");
-    const titleText = document.createElement("h2");
+    const titleText = document.createElement(`${aside?"h3":"h2"}`);
     
-    titleText.classList.add("main__article__title");
+    titleText.classList.add(`${aside?"aside":"main"}__article__title`);
     titleText.textContent = title;
     titleDiv.appendChild(titleText);
 
     return titleDiv;
 }
 
-function createWritingContent(entry) {
+function createWritingContent(entry, aside=false) {
     const contentDiv = document.createElement("div");
     const contentPar = document.createElement("p");
     
-    contentPar.classList.add("main__article__text");
+    contentPar.classList.add(`${aside?"aside":"main"}__article__text`);
     contentPar.textContent = entry.mainText;    
     contentDiv.appendChild(contentPar);
 
@@ -190,11 +207,15 @@ function createMusicContent(entry) {
     return contentDiv;
 }
 
-function createPhotoContent(entry) {
+function createPhotoContent(entry, aside=false) {
     const contentFig = document.createElement("figure");
-    contentFig.classList.add("main__article__fig");
+    contentFig.classList.add(`${aside?"aside":"main"}__article__fig`);
     
     const contentImg = document.createElement("img");
+    
+    if (aside) {
+        contentImg.classList.add("aside__article__fig__img");
+    }
 
     contentImg.setAttribute("src", entry.imageFile);
     contentImg.setAttribute("alt",entry.imageAlt);
@@ -209,22 +230,22 @@ function createPhotoContent(entry) {
     return contentFig;
 }
 
-function createArticle(entry) {
+function createArticle(entry, aside=false) {
     const article = document.createElement("article");
-    article.classList.add("main__article");
+    article.classList.add(`${aside?"aside":"main"}__article`);
 
-    const title = createArticleTitle(entry.title);
+    const title = createArticleTitle(entry.title, aside);
     let content = document.createTextNode("No content");;
     
     switch (entry.category) {
         case "writings":
-            content = createWritingContent(entry);
+            content = createWritingContent(entry, aside);
             break;
         case "music":
             content = createMusicContent(entry);
             break;
         case "photos":
-            content = createPhotoContent(entry);
+            content = createPhotoContent(entry, aside);
             break;
     }
 
