@@ -1,0 +1,103 @@
+{
+    "categories": ["writings","books","music","photos","travel","films","food"],
+    "entries": [
+        {
+            "title": "CBD",
+            "category": "writings",
+            "mainText": "With a grip stifling and tight\nyou take me to a new height;\nWith a whisper stern and sweet\nand a beauty too concrete\nyou entice my soul\nto give it gaping black hole;\n\nWhat a hold you have on me\nI'd stay though my soul screams 'flee'\nConsume my all, my all for thee",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageWidth": "",
+            "imageHeight": "",
+            "audioFile": "",
+            "audioType": "",
+            "best": true
+        },
+        {
+            "title": "Delusions",
+            "category": "writings",
+            "mainText": "Behind the screen \nI feel them glean\nSilently stripping me \nOf my precious dignity \nI swear my ears heard \nShutters as fast as this bird \nNo, I know it's absurd \nBut I swear my ears heard \nOf my precious dignity \nSilently stripped off me \nAs they insidiously glean \nFrom behind the screen \n",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageWidth": "",
+            "imageHeight": "",
+            "audioFile": "",
+            "audioType": "",
+            "best": true
+        },
+        {
+            "title": "Projector",
+            "category": "writings",
+            "mainText": "Through what lens do we see\nThe world that seems gloomy\nOr is it angry?\nDepends on what hounds me\nWhat is, is my mind\nI can see what I want to find\nDoes it make me blind?\nNo, that really is mankind.",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageWidth": "",
+            "imageHeight": "",
+            "audioFile": "",
+            "audioType": "",
+            "best": false
+            
+        },
+        {
+            "title": "The Killing of Thoughts",
+            "category": "writings",
+            "mainText": "In not too long a distance, I see\nA swift descent designed so steeply\nEveryone around's up and about\nIndifferent of their frothing mouth;\nLife, feigned ignorance, hypnotic daze\nWe're all dancing in the same dark place\nAs the killer crawls under the skin\nSpreading disease in the mind, unseen\nDivided, conquered, masterfully\nAt once, death falls upon the witty",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageWidth": "",
+            "imageHeight": "",
+            "audioFile": "",
+            "audioType": "",
+            "best": false
+        },
+        {
+            "title": "Original Song: Ulit",
+            "category": "music",
+            "mainText": "Insert lyrics here",
+            "imageFile": "",
+            "imageAlt": "",
+            "imageWidth": "",
+            "imageHeight": "",
+            "audioFile": "./audio/ulit.mp3",
+            "audioType": "audio/mp3",
+            "best": true
+        },
+        {
+            "title": "Going Home",
+            "category": "photos",
+            "mainText": "I love this place.\nI was here last time.\nTomorrow again.\nThe day after that, we'll see.\nBut it's life on repeat",
+            "imageFile": "./images/tracks.jpg",
+            "imageAlt": "A photo of buildings from train station platform",
+            "imageWidth": "1600",
+            "imageHeight": "1200",
+            "audioFile": "",
+            "audioType": "",
+            "best": false
+        },
+        {
+            "title": "Beauty is a Symptom of Life",
+            "category": "photos",
+            "mainText": "Tell me what flower this is,\nif only to save me from asking a lifeless box",
+            "imageFile": "./images/flower.jpg",
+            "imageAlt": "Two beautiful fuschia flowers",
+            "imageWidth": "1200",
+            "imageHeight": "1600",
+            "audioFile": "",
+            "audioType": "",
+            "best": true
+        },
+        {
+            "title": "Dancing Water",
+            "category": "photos",
+            "mainText": "Like a kid, I marvel at fountains.\nGive me back the bliss of not knowing.\nIt's all just magic",
+            "imageFile": "./images/fountain.jpg",
+            "imageAlt": "An image of a fountain with colorful lights",
+            "imageWidth": "641",
+            "imageHeight": "854",
+            "audioFile": "",
+            "audioType": "",
+            "best": false
+        }
+        
+    ]
+}
