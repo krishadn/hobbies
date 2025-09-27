@@ -84,7 +84,6 @@ function loadAsideContent() {
     const asideCarousel = document.querySelector(".aside__carousel");
 
     bestEntries.forEach(entry => {
-        console.log("Inside aside");
         const article = createArticle(entry,aside=true);
         asideCarousel.appendChild(article);
     })
@@ -136,13 +135,13 @@ function createWritingContent(entry, aside=false) {
     return contentDiv;
 }
 
-function createMusicContent(entry) {
-    const audioId = entry.audioFile.split("/")[2].split(".")[0];
+function createMusicContent(entry, aside=false) {
+    const audioId = `${entry.audioFile.split("/")[2].split(".")[0]}-${aside? "aside": "main"}`;
     const contentDiv = document.createElement("div");
-    contentDiv.classList.add("main__article__audio");
+    contentDiv.classList.add(`${aside? "aside": "main"}__article__audio`);
 
     const playerDiv = document.createElement("div");
-    playerDiv.classList.add("main__article__audio__player");
+    playerDiv.classList.add(`${aside? "aside": "main"}__article__audio__player`);
 
     const playBtn = document.createElement("button");
     playBtn.setAttribute("data-title", `${audioId}`);
@@ -242,7 +241,7 @@ function createArticle(entry, aside=false) {
             content = createWritingContent(entry, aside);
             break;
         case "music":
-            content = createMusicContent(entry);
+            content = createMusicContent(entry, aside);
             break;
         case "photos":
             content = createPhotoContent(entry, aside);
@@ -319,7 +318,7 @@ function moveProgressBar(event) {
 
 function updatePlayBtn(event) {
     const audio = event.target;
-    const audioId = audio.getAttribute("src").split("/")[2].split(".")[0];
+    const audioId = audio.dataset.title;
     const playBtn = document.querySelector(`button[data-title=${audioId}]`);
     
     playBtn.textContent = (audio.paused) ? "▶" : "⏸︎";
@@ -329,7 +328,7 @@ function updatePlayBtn(event) {
 
 function updateTimeIndicator(event) {
     const audio = event.target;
-    const audioId = audio.getAttribute("src").split("/")[2].split(".")[0];
+    const audioId = audio.dataset.title;
 
     // timestamp
     const timeStamp = document.querySelector(`p[data-title=${audioId}]`);
